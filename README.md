@@ -155,4 +155,28 @@ Photo Credits
 Banner picture of a Malabar Trogon by Saswat Mishra
 Inset picture of a Sholicola by Ian Lockwood
 
+Dataset Description
+Your challenge in this competition is to identify which birds are calling in recordings made in a Global Biodiversity Hotspot in the Western Ghats. This is an important task for scientists who monitor bird populations for conservation purposes. More accurate solutions could enable more comprehensive monitoring.
+
+This competition uses a hidden test set. When your submitted notebook is scored, the actual test data will be made available to your notebook.
+
+Files
+train_audio/ The training data consists of short recordings of individual bird calls generously uploaded by users of xenocanto.org. These files have been downsampled to 32 kHz where applicable to match the test set audio and converted to the ogg format. The training data should have nearly all relevant files; we expect there is no benefit to looking for more on xenocanto.org and appreciate your cooperation in limiting the burden on their servers.
+
+test_soundscapes/ When you submit a notebook, the test_soundscapes directory will be populated with approximately 1,100 recordings to be used for scoring. They are 4 minutes long and in ogg audio format. The file names are randomized but have the general form of soundscape_xxxxxx.ogg. It should take your submission notebook approximately five minutes to load all of the test soundscapes.
+
+unlabeled_soundscapes/ Unlabeled audio data from the same recording locations as the test soundscapes.
+
+train_metadata.csv A wide range of metadata is provided for the training data. The most directly relevant fields are:
+
+primary_label - a code for the bird species. You can review detailed information about the bird codes by appending the code to https://ebird.org/species/, such as https://ebird.org/species/amecro for the American Crow. Not all species have their own pages; some links will fail.
+latitude & longitude: coordinates for where the recording was taken. Some bird species may have local call 'dialects,' so you may want to seek geographic diversity in your training data.
+author - The user who provided the recording.
+filename: the name of the associated audio file.
+sample_submission.csv A valid sample submission.
+
+row_id: A slug of soundscape_[soundscape_id]_[end_time] for the prediction.
+[bird_id]: There are 182 bird ID columns. You will need to predict the probability of the presence of each bird for each row.
+eBird_Taxonomy_v2021.csv - Data on the relationships between different species.
+
 Competition Link:- https://www.kaggle.com/competitions/birdclef-2024?inquiry-id=inq_XUETmWriuTmmgb6npjKqbpfHtsQj&reference-id=10663864&subject=10663864&status=completed&fields%5Bcurrent-selfie%5D%5Btype%5D=selfie&fields%5Bcurrent-selfie%5D%5Bvalue%5D%5Bid%5D=self_AUqjBFhBWkNVQDN7BPnQXu85YAjR&fields%5Bcurrent-selfie%5D%5Bvalue%5D%5Btype%5D=Selfie%3A%3AProfileAndCenter
